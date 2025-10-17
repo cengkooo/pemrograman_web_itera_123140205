@@ -1,5 +1,3 @@
-👇
-
 📝 Aplikasi Manajemen Tugas Mahasiswa
 
 Aplikasi ini dibuat untuk membantu mahasiswa dalam mengelola aktivitas akademik seperti tugas, proyek, dan deadline.
