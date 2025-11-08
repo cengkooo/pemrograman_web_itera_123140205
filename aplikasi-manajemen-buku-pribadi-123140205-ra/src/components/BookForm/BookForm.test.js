@@ -30,10 +30,12 @@ describe('BookForm Component', () => {
     const submitButton = screen.getByRole('button', { name: /tambah buku/i });
     fireEvent.click(submitButton);
 
-    await waitFor(() => {
-      expect(screen.getByText(/judul buku harus diisi/i)).toBeInTheDocument();
-      expect(screen.getByText(/nama penulis harus diisi/i)).toBeInTheDocument();
-    });
+    // FIXED: Cek keduanya dalam satu waitFor, tapi query secara spesifik
+    const titleError = await screen.findByText(/judul buku harus diisi/i);
+    const authorError = await screen.findByText(/nama penulis harus diisi/i);
+    
+    expect(titleError).toBeInTheDocument();
+    expect(authorError).toBeInTheDocument();
   });
 
   test('validates minimum character length', async () => {
@@ -47,10 +49,12 @@ describe('BookForm Component', () => {
     fireEvent.change(authorInput, { target: { value: 'Cd' } });
     fireEvent.click(submitButton);
 
-    await waitFor(() => {
-      expect(screen.getByText(/judul buku minimal 3 karakter/i)).toBeInTheDocument();
-      expect(screen.getByText(/nama penulis minimal 3 karakter/i)).toBeInTheDocument();
-    });
+    // FIXED: Gunakan findByText untuk masing-masing error
+    const titleError = await screen.findByText(/judul buku minimal 3 karakter/i);
+    const authorError = await screen.findByText(/nama penulis minimal 3 karakter/i);
+    
+    expect(titleError).toBeInTheDocument();
+    expect(authorError).toBeInTheDocument();
   });
 
   test('clears validation errors when user types', async () => {
@@ -61,9 +65,9 @@ describe('BookForm Component', () => {
 
     // Trigger validation error
     fireEvent.click(submitButton);
-    await waitFor(() => {
-      expect(screen.getByText(/judul buku harus diisi/i)).toBeInTheDocument();
-    });
+    
+    const errorMessage = await screen.findByText(/judul buku harus diisi/i);
+    expect(errorMessage).toBeInTheDocument();
 
     // Type to clear error
     fireEvent.change(titleInput, { target: { value: 'New Book' } });
@@ -90,5 +94,38 @@ describe('BookForm Component', () => {
     await waitFor(() => {
       expect(mockOnSubmit).toHaveBeenCalled();
     });
+  });
+
+  test('displays correct title for edit mode', () => {
+    const editBook = {
+      id: '1',
+      title: 'Existing Book',
+      author: 'Existing Author',
+      status: 'owned'
+    };
+
+    renderWithProvider(<BookForm editBook={editBook} />);
+    
+    expect(screen.getByText(/edit buku/i)).toBeInTheDocument();
+    expect(screen.getByDisplayValue('Existing Book')).toBeInTheDocument();
+    expect(screen.getByDisplayValue('Existing Author')).toBeInTheDocument();
+  });
+
+  test('button shows correct text when submitting', async () => {
+    renderWithProvider(<BookForm />);
+    
+    const titleInput = screen.getByLabelText(/judul buku/i);
+    const authorInput = screen.getByLabelText(/penulis/i);
+    const submitButton = screen.getByRole('button', { name: /tambah buku/i });
+
+    fireEvent.change(titleInput, { target: { value: 'Valid Title' } });
+    fireEvent.change(authorInput, { target: { value: 'Valid Author' } });
+    
+    // Submit form
+    fireEvent.click(submitButton);
+
+    // Button should show "Menyimpan..." while submitting
+    const savingButton = await screen.findByText(/menyimpan/i);
+    expect(savingButton).toBeInTheDocument();
   });
 });

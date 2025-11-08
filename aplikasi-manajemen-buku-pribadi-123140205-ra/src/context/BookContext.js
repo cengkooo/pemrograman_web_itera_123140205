@@ -17,27 +17,42 @@ export const BookProvider = ({ children }) => {
   const [books, setBooks] = useState([]);
   const [filter, setFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  // Load books dari localStorage saat pertama kali
+  // Load books dari localStorage saat pertama kali - HANYA SEKALI
   useEffect(() => {
     try {
       const storedBooks = localStorage.getItem('books');
-      if (storedBooks) {
-        setBooks(JSON.parse(storedBooks));
+      console.log('📖 Loading from localStorage:', storedBooks);
+      
+      if (storedBooks && storedBooks !== 'undefined' && storedBooks !== 'null') {
+        const parsedBooks = JSON.parse(storedBooks);
+        if (Array.isArray(parsedBooks) && parsedBooks.length > 0) {
+          setBooks(parsedBooks);
+          console.log('✅ Books loaded successfully:', parsedBooks);
+        }
       }
     } catch (error) {
-      console.error('Error loading books from localStorage:', error);
+      console.error('❌ Error loading books from localStorage:', error);
+    } finally {
+      setIsLoaded(true);
     }
-  }, []);
+  }, []); // HANYA RUN SEKALI saat mount
 
-  // Simpan books ke localStorage setiap ada perubahan
+  // Simpan books ke localStorage setiap ada perubahan - TAPI SKIP SAAT FIRST LOAD
   useEffect(() => {
-    try {
-      localStorage.setItem('books', JSON.stringify(books));
-    } catch (error) {
-      console.error('Error saving books to localStorage:', error);
+    if (!isLoaded) {
+      return; // Skip save saat pertama kali load
     }
-  }, [books]);
+
+    try {
+      console.log('💾 Saving to localStorage:', books);
+      localStorage.setItem('books', JSON.stringify(books));
+      console.log('✅ Books saved successfully');
+    } catch (error) {
+      console.error('❌ Error saving books to localStorage:', error);
+    }
+  }, [books, isLoaded]); // Run setiap books berubah DAN setelah loaded
 
   // Tambah buku baru
   const addBook = (book) => {
@@ -46,22 +61,34 @@ export const BookProvider = ({ children }) => {
       ...book,
       createdAt: new Date().toISOString()
     };
-    setBooks(prevBooks => [...prevBooks, newBook]);
+    
+    setBooks(prevBooks => {
+      const updatedBooks = [...prevBooks, newBook];
+      console.log('➕ Adding book:', newBook);
+      return updatedBooks;
+    });
+    
     return newBook;
   };
 
   // Update buku
   const updateBook = (id, updatedBook) => {
-    setBooks(prevBooks =>
-      prevBooks.map(book =>
+    setBooks(prevBooks => {
+      const updated = prevBooks.map(book =>
         book.id === id ? { ...book, ...updatedBook } : book
-      )
-    );
+      );
+      console.log('✏️ Updating book:', id);
+      return updated;
+    });
   };
 
   // Hapus buku
   const deleteBook = (id) => {
-    setBooks(prevBooks => prevBooks.filter(book => book.id !== id));
+    setBooks(prevBooks => {
+      const filtered = prevBooks.filter(book => book.id !== id);
+      console.log('🗑️ Deleting book:', id);
+      return filtered;
+    });
   };
 
   // Get filtered books
