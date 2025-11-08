@@ -1,0 +1,152 @@
+/* BookForm Styles - Black Coffee Color Palette */
+.book-form {
+  background: #3E2723;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-title {
+  color: #D7CCC8;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  color: #BCAAA4;
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.required {
+  color: #D32F2F;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: #4E342E;
+  border: 2px solid #5D4037;
+  border-radius: 8px;
+  color: #EFEBE9;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus {
+  outline: none;
+  border-color: #8D6E63;
+  background: #5D4037;
+  box-shadow: 0 0 0 3px rgba(141, 110, 99, 0.2);
+}
+
+.form-input::placeholder {
+  color: #8D6E63;
+}
+
+.form-input:disabled,
+.form-select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.input-error {
+  border-color: #D32F2F !important;
+}
+
+.error-message {
+  display: block;
+  color: #EF5350;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.error-submit {
+  background: rgba(211, 47, 47, 0.1);
+  border: 1px solid #D32F2F;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary {
+  background: #6D4C41;
+  color: #EFEBE9;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #5D4037;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary {
+  background: #4E342E;
+  color: #BCAAA4;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #3E2723;
+  color: #D7CCC8;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .book-form {
+    padding: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
