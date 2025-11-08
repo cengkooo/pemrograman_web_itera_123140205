@@ -1,4 +1,4 @@
-# 📚 Personal Book Tracker
+# 📚 Personal Book Tracker by Andryano Shevchenko Limbong - 123140205 - Pengembangan Aplikasi Website RA - Teknik Informatika ITERA
 
 Aplikasi web untuk mengelola koleksi buku pribadi dengan fitur lengkap menggunakan React.js dan Color Palette Black Coffee.
 
@@ -75,19 +75,25 @@ npm test
 ## 📸 Screenshot Antarmuka
 
 ### Halaman Beranda
-![Home Page](screenshots/home.png)
+<img width="1920" height="938" alt="image" src="https://github.com/user-attachments/assets/eb81e5ac-da66-4e20-9461-5f5812b25347" />
+
 - Tampilan daftar buku dengan card design
 - Form tambah buku yang elegant
 - Filter dan search bar yang mudah digunakan
 
 ### Halaman Statistik
-![Stats Page](screenshots/stats.png)
+<img width="1920" height="937" alt="image" src="https://github.com/user-attachments/assets/4caa0f1f-5061-466a-a144-34d7a76da74d" />
+
 - Overview statistik dengan progress bar
 - Top 5 penulis favorit
 - Daftar buku terbaru
 
 ### Form Tambah/Edit Buku
-![Book Form](screenshots/form.png)
+<img width="1920" height="941" alt="image" src="https://github.com/user-attachments/assets/b8b0582b-2a1a-4eb2-b475-cdca23d4d666" />
+
+<img width="1920" height="937" alt="image" src="https://github.com/user-attachments/assets/9ca8e1f2-01f1-4623-81db-a3067e2dd9f4" />
+
+
 - Validasi real-time
 - Error handling yang jelas
 - Design yang user-friendly
