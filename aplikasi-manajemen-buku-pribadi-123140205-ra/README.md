@@ -382,4 +382,4 @@ Untuk pertanyaan atau feedback, silakan buat issue di repository ini.
 
 **Happy Coding! 📚✨**
 
-*Made with ❤️ using React.js*
+*Made with ❤️ by ANDRYANO SHEVCHENKO LIMBONG - 123140205 - PAW RA using React.js*
