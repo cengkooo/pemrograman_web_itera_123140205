@@ -1,3 +1,19 @@
+## 👨‍💻 Pembuat
+
+- **Nama**: Andryano Shevchenko Limbong
+- **NIM**: 123140205
+- **Kelas**: RA
+- **Mata Kuliah**: Pengembangan Aplikasi Website
+- **Tahun**: 2025
+
+## 📞 Kontak
+
+Jika ada pertanyaan atau saran, silakan hubungi:
+- **Email**: [andryanoshevchenkolimbong@gmail.com]
+- **GitHub**: [github.com/cengkooo]
+
+---
+
 # 📚 Program Pengelolaan Data Nilai Mahasiswa
 
 Program Python untuk mengelola data nilai mahasiswa dengan fitur lengkap termasuk perhitungan nilai akhir, penentuan grade, dan analisis statistik.
@@ -568,23 +584,9 @@ Beberapa ide untuk pengembangan:
 
 Program ini dibuat untuk keperluan edukasi dan tugas praktikum. Bebas digunakan dan dimodifikasi.
 
-## 👨‍💻 Pembuat
-
-- **Nama**: Andryano Shevchenko Limbong
-- **NIM**: 123140205
-- **Kelas**: RA
-- **Mata Kuliah**: Pengembangan Aplikasi Website
-- **Tahun**: 2025
-
-## 📞 Kontak
-
-Jika ada pertanyaan atau saran, silakan hubungi:
-- **Email**: [andryanoshevchenkolimbong@gmail.com]
-- **GitHub**: [github.com/cengkooo]
-
 ## 🙏 Terima Kasih
 
-Terima kasih telah menggunakan program ini. Semoga bermanfaat untuk pembelajaran Python! 🎓
+Terima kasih. Semoga bermanfaat untuk pembelajaran Python! 🎓
 
 ---
 
