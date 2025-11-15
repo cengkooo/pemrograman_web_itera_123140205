@@ -16,6 +16,20 @@ Jika ada pertanyaan atau saran, silakan hubungi:
 - **Email**: [andryanoshevchenkolimbong@gmail.com]
 - **GitHub**: [github.com/cengkooo]
 
+## 📷 Screenshot
+Screenshot hasil running program
+
+1. assets\image.png
+2. assets\image-1.png
+3. assets\image-2.png
+4. assets\image-3.png
+5. assets\image-4.png
+6. assets\image-5.png
+7. assets\image-6.png
+8. assets\image-7.png
+
+
+2.
 ---
 
 # 📚 Sistem Manajemen Perpustakaan Sederhana (OOP)
@@ -460,30 +474,15 @@ Program ini tidak hanya memenuhi persyaratan tugas, tetapi juga mendemonstrasika
 
 <div align="center">
 
-### 🌟 Terima Kasih Telah Menggunakan Program Ini! 🌟
+### 🌟 Terima Kasih 🌟
 
 **Happy Coding!** 💻🚀
 
 ---
 
-**Made with ❤️ and ☕ by [Your Name]**
+**Made with ❤️ and ☕ by Andryano Shevchenko Limbong**
 
-*Last Updated: November 2024*
-
-</div> 📋 Daftar Isi
-
-- [Tentang Program](#tentang-program)
-- [Konsep OOP yang Diterapkan](#konsep-oop-yang-diterapkan)
-- [Struktur Class](#struktur-class)
-- [Fitur Program](#fitur-program)
-- [Instalasi & Menjalankan](#instalasi--menjalankan)
-- [Cara Penggunaan](#cara-penggunaan)
-- [Screenshot Program](#screenshot-program)
-- [Diagram Class](#diagram-class)
-- [Dokumentasi Class & Method](#dokumentasi-class--method)
-- [Contoh Kode](#contoh-kode)
-- [Kriteria Penilaian](#kriteria-penilaian)
-- [Pembuat](#pembuat)
+Last Updated: 16 November 2025
 
 ---
 
