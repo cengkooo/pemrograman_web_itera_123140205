@@ -28,8 +28,6 @@ Screenshot hasil running program
 7. assets\image-6.png
 8. assets\image-7.png
 
-
-2.
 ---
 
 # 📚 Sistem Manajemen Perpustakaan Sederhana (OOP)
